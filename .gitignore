@@ -48,3 +48,6 @@ packages/api-client/src/generated/
 
 # Supabase
 supabase/.temp/
+
+# Internal docs
+LAUNCH_PLAYBOOK.md

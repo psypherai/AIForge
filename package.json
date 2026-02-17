@@ -2,9 +2,36 @@
   "name": "aiforge-starter-pack",
   "version": "1.0.0",
   "private": true,
-  "description": "AIForge Starter Pack by Psypher AI — The #1 AI monorepo template for 2026+",
-  "author": "Psypher AI",
+  "description": "The #1 AI-native monorepo template for 2026+. Next.js + Expo + FastAPI + LangGraph + Supabase with 90%+ code sharing.",
+  "author": "Psypher AI <hello@psypher.ai>",
   "license": "MIT",
+  "homepage": "https://github.com/psypherai/AIForge#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psypherai/AIForge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/psypherai/AIForge/issues"
+  },
+  "keywords": [
+    "ai",
+    "monorepo",
+    "nextjs",
+    "expo",
+    "react-native",
+    "fastapi",
+    "langgraph",
+    "supabase",
+    "tailwind",
+    "nativewind",
+    "turborepo",
+    "rag",
+    "pgvector",
+    "vercel-ai-sdk",
+    "langfuse",
+    "starter-template",
+    "boilerplate"
+  ],
   "packageManager": "pnpm@10.30.0",
   "engines": {
     "node": ">=20.0.0",
