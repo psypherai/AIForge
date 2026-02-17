@@ -424,6 +424,32 @@ docker compose up -d
 - [x] PWA support (installable web app + offline)
 - [x] CLI scaffolding tool (`npx create-aiforge`)
 - [x] Expo SDK 55 + NativeWind v5 upgrade guide
+- [x] Scalar API Reference (replaced Swagger UI)
+
+### Coming Next
+
+**High Priority — Differentiators**
+
+- [ ] A2A Protocol (Google Agent-to-Agent) — agent-to-agent communication alongside MCP
+- [ ] Voice AI — `useVoiceChat` hook with OpenAI Realtime API / Deepgram STT+TTS
+- [ ] AI Guardrails — content filtering, PII detection, prompt injection protection
+- [ ] Human-in-the-Loop — AI actions requiring user approval before execution
+- [ ] AI Payments (x402) — agents that can pay for tools and services
+
+**Medium Priority — Production Essentials**
+
+- [ ] AI Background Agents — long-running async tasks with notifications
+- [ ] Multi-provider LLM Router — auto-route between OpenAI / Anthropic / Gemini / local models
+- [ ] Fine-tuning Pipeline — scripts to fine-tune on your app's data
+- [ ] Prompt Playground — built-in UI to test and iterate prompts
+- [ ] E2E AI Testing — automated LLM output validation beyond unit tests
+
+**Ecosystem Integrations**
+
+- [ ] Cloudflare Workers AI — alternative edge deployment
+- [ ] Expo Push Notifications + AI — push triggered by AI agents
+- [ ] Stripe Integration — SaaS billing with AI usage metering
+- [ ] Admin Dashboard — analytics for AI usage, costs, latency
 
 ---
 
