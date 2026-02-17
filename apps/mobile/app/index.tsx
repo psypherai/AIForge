@@ -83,7 +83,7 @@ export default function HomeScreen() {
             <Text className="ml-2 text-xs text-muted-foreground">Terminal</Text>
           </View>
           <View className="gap-1 p-5">
-            <Text className="font-mono text-xs text-muted-foreground">$ git clone .../AIForge.git</Text>
+            <Text className="font-mono text-xs text-muted-foreground">$ npx degit psypherai/AIForge my-app</Text>
             <Text className="font-mono text-xs text-muted-foreground">$ pnpm install && pnpm dev</Text>
             <Text className="mt-2 font-mono text-xs text-green-400">✓ Web     → :3000</Text>
             <Text className="font-mono text-xs text-green-400">✓ Mobile  → :8081</Text>
