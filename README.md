@@ -249,7 +249,7 @@ That's it. Three apps running simultaneously:
 | **Web** | [localhost:3000](http://localhost:3000) | Next.js + Turbopack |
 | **Mobile Web** | [localhost:8081](http://localhost:8081) | Expo + NativeWind |
 | **Backend API** | [localhost:8000](http://localhost:8000) | FastAPI + Uvicorn |
-| **API Docs** | [localhost:8000/docs](http://localhost:8000/docs) | Swagger UI |
+| **API Docs** | [localhost:8000/docs](http://localhost:8000/docs) | Scalar API Reference |
 | **Supabase Studio** | [localhost:54323](http://localhost:54323) | Postgres + pgvector |
 | **Langfuse** | [localhost:3100](http://localhost:3100) | AI Observability |
 

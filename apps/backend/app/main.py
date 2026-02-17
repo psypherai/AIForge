@@ -5,6 +5,7 @@ Production-grade AI backend with:
 - /api/v1/chat/stream — SSE streaming chat
 - /api/v1/rag — Retrieval-augmented generation with Supabase pgvector
 - /health — Health check
+- /docs — Scalar API reference (modern alternative to Swagger UI)
 - /openapi.json — Auto-generated OpenAPI spec
 """
 
@@ -13,6 +14,7 @@ from collections.abc import AsyncGenerator
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
 
 from app.core.config import settings
 from app.routers import chat
@@ -36,9 +38,42 @@ app = FastAPI(
     description="AI-native backend by Psypher AI — FastAPI + LangGraph",
     version="1.0.0",
     lifespan=lifespan,
-    docs_url="/docs",
-    redoc_url="/redoc",
+    docs_url=None,  # Disable default Swagger UI
+    redoc_url=None,  # Disable default ReDoc
 )
+
+
+@app.get("/docs", include_in_schema=False)
+async def scalar_docs() -> HTMLResponse:
+    """Scalar API Reference — modern, beautiful API documentation."""
+    return HTMLResponse(
+        """
+<!doctype html>
+<html>
+  <head>
+    <title>AIForge API — Psypher AI</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <script
+      id="api-reference"
+      data-url="/openapi.json"
+      data-configuration='{
+        "theme": "kepler",
+        "layout": "modern",
+        "darkMode": true,
+        "hiddenClients": [],
+        "metadata": {
+          "title": "AIForge API — Psypher AI"
+        }
+      }'
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/@scalar/api-reference"></script>
+  </body>
+</html>
+        """
+    )
 
 # CORS
 app.add_middleware(
