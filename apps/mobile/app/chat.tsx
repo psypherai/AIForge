@@ -2,6 +2,7 @@ import { View, Text, TextInput, Pressable, FlatList, KeyboardAvoidingView, Platf
 import { useState, useCallback, useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link } from 'solito/link';
+import { ThemeToggle } from '../components/theme-toggle';
 
 interface Message {
   id: string;
@@ -77,9 +78,12 @@ export default function ChatScreen() {
               <Text className="text-xs text-muted-foreground">LangGraph + Vercel AI SDK</Text>
             </View>
           </View>
-          <View className="flex-row items-center gap-2">
-            <View className={`h-2 w-2 rounded-full ${loading ? 'bg-yellow-400' : 'bg-green-400'}`} />
-            <Text className="text-xs text-muted-foreground">{loading ? 'Thinking...' : 'Ready'}</Text>
+          <View className="flex-row items-center gap-3">
+            <View className="flex-row items-center gap-2">
+              <View className={`h-2 w-2 rounded-full ${loading ? 'bg-yellow-400' : 'bg-green-400'}`} />
+              <Text className="text-xs text-muted-foreground">{loading ? 'Thinking...' : 'Ready'}</Text>
+            </View>
+            <ThemeToggle />
           </View>
         </View>
 

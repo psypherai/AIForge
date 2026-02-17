@@ -1,6 +1,7 @@
 import { View, Text, Pressable, ScrollView } from 'react-native';
 import { Link } from 'solito/link';
 import { SafeAreaView } from 'react-native-safe-area-context';
+import { ThemeToggle } from '../components/theme-toggle';
 
 const FEATURES = [
   { icon: '⚡', title: 'Web + Mobile', desc: 'Next.js 16 + Expo SDK 54 with 90%+ shared code' },
@@ -29,9 +30,12 @@ export default function HomeScreen() {
             </View>
             <Text className="text-sm font-semibold text-foreground">AIForge</Text>
           </View>
-          <View className="flex-row items-center gap-2">
-            <View className="h-2 w-2 rounded-full bg-green-400" />
-            <Text className="text-xs text-muted-foreground">Ready</Text>
+          <View className="flex-row items-center gap-3">
+            <View className="flex-row items-center gap-2">
+              <View className="h-2 w-2 rounded-full bg-green-400" />
+              <Text className="text-xs text-muted-foreground">Ready</Text>
+            </View>
+            <ThemeToggle />
           </View>
         </View>
 
