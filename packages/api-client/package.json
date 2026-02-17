@@ -1,0 +1,32 @@
+{
+  "name": "@aiforge/api-client",
+  "version": "1.0.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./hooks": "./src/hooks.ts"
+  },
+  "scripts": {
+    "generate": "openapi-ts --input http://localhost:8000/openapi.json --output ./src/generated --client @hey-api/client-fetch",
+    "lint": "biome check src/",
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf dist .turbo node_modules src/generated"
+  },
+  "dependencies": {
+    "@aiforge/core": "workspace:*",
+    "@hey-api/client-fetch": "^0.13.1",
+    "@tanstack/react-query": "^5.90.21"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.92.4",
+    "@types/react": "^19.0.8",
+    "react": "^19.2.0",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0"
+  }
+}

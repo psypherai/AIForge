@@ -1,0 +1,103 @@
+# ============================================================
+# AIForge Starter Pack — Docker Compose
+# Local development: Supabase + FastAPI backend
+# Usage: docker compose up -d
+# ============================================================
+
+services:
+  # ── Supabase (local) ─────────────────────────────────────
+  supabase-db:
+    image: supabase/postgres:15.6.1.143
+    container_name: aiforge-supabase-db
+    ports:
+      - "54322:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - supabase-db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  supabase-studio:
+    image: supabase/studio:20250210-41a6f04
+    container_name: aiforge-supabase-studio
+    ports:
+      - "54323:3000"
+    environment:
+      STUDIO_PG_META_URL: http://supabase-meta:8080
+      SUPABASE_URL: http://supabase-kong:8000
+      SUPABASE_REST_URL: http://supabase-kong:8000/rest/v1
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+
+  supabase-kong:
+    image: kong:2.8.1
+    container_name: aiforge-supabase-kong
+    ports:
+      - "54321:8000"
+    environment:
+      KONG_DATABASE: "off"
+      KONG_DECLARATIVE_CONFIG: /var/lib/kong/kong.yml
+      KONG_DNS_ORDER: LAST,A,CNAME
+      KONG_PLUGINS: request-transformer,cors,key-auth,acl
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+
+  supabase-meta:
+    image: supabase/postgres-meta:v0.83.2
+    container_name: aiforge-supabase-meta
+    environment:
+      PG_META_PORT: 8080
+      PG_META_DB_HOST: supabase-db
+      PG_META_DB_PORT: 5432
+      PG_META_DB_NAME: postgres
+      PG_META_DB_USER: postgres
+      PG_META_DB_PASSWORD: postgres
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+
+  # ── Langfuse (local observability) ───────────────────────
+  langfuse:
+    image: langfuse/langfuse:2
+    container_name: aiforge-langfuse
+    ports:
+      - "3100:3000"
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@supabase-db:5432/postgres
+      NEXTAUTH_URL: http://localhost:3100
+      NEXTAUTH_SECRET: my-langfuse-secret-change-me
+      SALT: my-langfuse-salt-change-me
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+
+  # ── FastAPI Backend ──────────────────────────────────────
+  backend:
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    container_name: aiforge-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - SUPABASE_DB_URL=postgresql://postgres:postgres@supabase-db:5432/postgres
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - LANGFUSE_PUBLIC_KEY=${LANGFUSE_PUBLIC_KEY}
+      - LANGFUSE_SECRET_KEY=${LANGFUSE_SECRET_KEY}
+      - LANGFUSE_HOST=http://langfuse:3000
+    volumes:
+      - ./apps/backend:/app
+    depends_on:
+      supabase-db:
+        condition: service_healthy
+
+volumes:
+  supabase-db-data:

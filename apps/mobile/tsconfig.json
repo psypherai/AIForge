@@ -1,0 +1,33 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "@aiforge/ui/*": [
+        "../../packages/ui/src/*"
+      ],
+      "@aiforge/core/*": [
+        "../../packages/core/src/*"
+      ],
+      "@aiforge/ai/*": [
+        "../../packages/ai/src/*"
+      ],
+      "@aiforge/api-client/*": [
+        "../../packages/api-client/src/*"
+      ],
+      "@aiforge/db/*": [
+        "../../packages/db/src/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts",
+    "nativewind-env.d.ts"
+  ]
+}

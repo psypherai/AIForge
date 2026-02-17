@@ -1,0 +1,28 @@
+{
+  "name": "@aiforge/db",
+  "version": "1.0.0",
+  "private": true,
+  "sideEffects": false,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./types": "./src/types.ts",
+    "./pgvector": "./src/pgvector.ts",
+    "./migrations": "./src/migrations.ts"
+  },
+  "scripts": {
+    "lint": "biome check src/",
+    "typecheck": "tsc --noEmit",
+    "db:generate": "supabase gen types typescript --local > src/database.types.ts",
+    "db:push": "supabase db push",
+    "clean": "rm -rf dist .turbo node_modules"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.96.0"
+  },
+  "devDependencies": {
+    "supabase": "^2.12.0",
+    "typescript": "^5.9.3"
+  }
+}

@@ -1,0 +1,55 @@
+[project]
+name = "aiforge-backend"
+version = "1.0.0"
+description = "AIForge Backend — FastAPI + LangGraph by Psypher AI"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.34.0",
+    "pydantic>=2.10.0",
+    "pydantic-settings>=2.7.0",
+    "langchain>=0.3.14",
+    "langchain-openai>=0.3.2",
+    "langchain-anthropic>=0.3.4",
+    "langgraph>=0.2.70",
+    "langfuse>=2.58.0",
+    "langsmith>=0.2.10",
+    "supabase>=2.11.0",
+    "pgvector>=0.3.6",
+    "psycopg[binary]>=3.2.4",
+    "httpx>=0.28.0",
+    "python-multipart>=0.0.18",
+    "python-dotenv>=1.0.1",
+    "openai>=1.61.0",
+    "tiktoken>=0.8.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-asyncio>=0.25.0",
+    "ruff>=0.9.3",
+    "mypy>=1.14.0",
+    "httpx>=0.28.0",
+]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP", "ANN", "S", "B", "A", "COM", "C4", "DTZ", "T20", "ICN"]
+ignore = ["ANN101", "ANN102", "ANN401", "S101", "COM812"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

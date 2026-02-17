@@ -1,0 +1,21 @@
+{
+  "name": "@aiforge/config",
+  "version": "1.0.0",
+  "private": true,
+  "sideEffects": false,
+  "exports": {
+    "./tailwind": "./src/tailwind.css",
+    "./typescript/base": "./src/tsconfig.base.json",
+    "./typescript/nextjs": "./src/tsconfig.nextjs.json",
+    "./typescript/react-native": "./src/tsconfig.react-native.json"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

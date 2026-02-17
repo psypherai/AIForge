@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "plugins": [{ "name": "next" }],
+    "paths": {
+      "@/*": ["./src/*"],
+      "@aiforge/ui/*": ["../../packages/ui/src/*"],
+      "@aiforge/core/*": ["../../packages/core/src/*"],
+      "@aiforge/ai/*": ["../../packages/ai/src/*"],
+      "@aiforge/api-client/*": ["../../packages/api-client/src/*"],
+      "@aiforge/observability/*": ["../../packages/observability/src/*"],
+      "@aiforge/db/*": ["../../packages/db/src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}

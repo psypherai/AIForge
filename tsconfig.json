@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "ES2024",
+    "lib": ["DOM", "DOM.Iterable", "ES2024"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": false,
+    "paths": {
+      "@aiforge/ui/*": ["./packages/ui/src/*"],
+      "@aiforge/core/*": ["./packages/core/src/*"],
+      "@aiforge/ai/*": ["./packages/ai/src/*"],
+      "@aiforge/api-client/*": ["./packages/api-client/src/*"],
+      "@aiforge/config/*": ["./packages/config/src/*"],
+      "@aiforge/observability/*": ["./packages/observability/src/*"],
+      "@aiforge/db/*": ["./packages/db/src/*"],
+      "@aiforge/evals/*": ["./packages/evals/src/*"]
+    }
+  },
+  "exclude": ["node_modules", "apps/backend"]
+}

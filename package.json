@@ -1,0 +1,48 @@
+{
+  "name": "aiforge-starter-pack",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AIForge Starter Pack by Psypher AI — The #1 AI monorepo template for 2026+",
+  "author": "Psypher AI",
+  "license": "MIT",
+  "packageManager": "pnpm@10.30.0",
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=10.0.0"
+  },
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "dev:web": "turbo run dev --filter=@aiforge/web",
+    "dev:mobile": "turbo run dev --filter=@aiforge/mobile",
+    "dev:backend": "turbo run dev --filter=@aiforge/backend",
+    "build": "turbo run build",
+    "build:web": "turbo run build --filter=@aiforge/web",
+    "lint": "turbo run lint",
+    "format": "biome format --write .",
+    "check": "biome check --write .",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "typecheck": "turbo run typecheck",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "db:generate": "turbo run db:generate",
+    "db:push": "turbo run db:push",
+    "api:generate": "turbo run generate --filter=@aiforge/api-client",
+    "docker:up": "docker compose up -d",
+    "docker:down": "docker compose down",
+    "prepare": "husky"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "supabase",
+      "unrs-resolver"
+    ]
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.2",
+    "husky": "^9.1.7",
+    "turbo": "^2.8.9",
+    "typescript": "^5.9.3"
+  }
+}
