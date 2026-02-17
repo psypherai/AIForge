@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
     '@aiforge/ui',
     '@aiforge/core',
     '@aiforge/ai',
+    '@aiforge/mcp',
     '@aiforge/api-client',
     '@aiforge/observability',
     '@aiforge/db',

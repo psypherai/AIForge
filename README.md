@@ -105,6 +105,41 @@ pnpm dev
 <td>None</td>
 </tr>
 <tr>
+<td><strong>MCP</strong></td>
+<td>Server + Client (Model Context Protocol)</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Multi-Agent</strong></td>
+<td>4 patterns (Supervisor, Pipeline, Parallel, Debate)</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Realtime AI</strong></td>
+<td>Collaborative AI with live presence</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>PWA</strong></td>
+<td>Installable + offline support</td>
+<td>Manual</td>
+<td>N/A</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Edge Functions</strong></td>
+<td>Supabase Edge (Deno)</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
 <td><strong>Type Safety</strong></td>
 <td>End-to-end (Zod + OpenAPI + Pydantic)</td>
 <td>tRPC</td>
@@ -126,10 +161,16 @@ pnpm dev
 | **Styling** | NativeWind + Tailwind CSS + shadcn/ui | One styling system everywhere |
 | **AI (TypeScript)** | Vercel AI SDK + LangGraph.js + Zod | Streaming, tools, structured outputs |
 | **AI (Python)** | FastAPI + LangGraph + LangChain | Production agentic loops |
+| **Multi-Agent** | Supervisor, Pipeline, Parallel, Debate | 4 orchestration patterns out of the box |
+| **MCP** | @modelcontextprotocol/sdk | Expose app capabilities to any AI model |
 | **RAG** | Supabase pgvector + OpenAI embeddings | Vector search in your database |
+| **Realtime AI** | Supabase Realtime + AI streaming | Collaborative AI with live presence |
+| **Edge Functions** | Supabase Edge (Deno) | Serverless AI at the edge |
 | **API Client** | @hey-api/openapi-ts + TanStack Query v5 | Auto-generated, type-safe |
 | **Auth/DB** | Supabase (auth + Postgres + realtime) | All-in-one BaaS |
 | **Observability** | Langfuse + LangSmith | Trace every AI call, open-source |
+| **PWA** | Service Worker + Web Manifest | Installable web app with offline support |
+| **CLI** | create-aiforge | `npx create-aiforge my-app` scaffolding |
 | **Tooling** | Biome + Vitest + Playwright | 100x faster linting, full testing |
 
 ---
@@ -139,21 +180,27 @@ pnpm dev
 ```
 .
 ├── apps/
-│   ├── web/                 # Next.js 16 + Turbopack + shadcn/ui
+│   ├── web/                 # Next.js 16 + Turbopack + shadcn/ui + PWA
 │   ├── mobile/              # Expo SDK 54 + Solito + NativeWind
 │   └── backend/             # Python FastAPI + LangGraph + uv
 │
 ├── packages/
 │   ├── ui/                  # Shared UI (shadcn + Tailwind RN primitives)
 │   ├── core/                # Types, Zod schemas, utils, constants
-│   ├── ai/                  # Prompt factory, tools, RAG, hooks
+│   ├── ai/                  # Prompt factory, tools, RAG, multi-agent, realtime
+│   ├── mcp/                 # MCP server + client (Model Context Protocol)
 │   ├── api-client/          # Generated OpenAPI client + React Query hooks
 │   ├── config/              # Shared Tailwind, TypeScript configs
 │   ├── observability/       # Langfuse + LangSmith wrappers
 │   ├── db/                  # Supabase types + pgvector helpers
 │   ├── evals/               # Agent evaluation suite
+│   ├── create-aiforge/      # CLI scaffolding tool (npx create-aiforge)
 │   └── eslint-config/       # ESLint flat config (fallback)
 │
+├── supabase/
+│   └── functions/           # Edge Functions (ai-chat, embed, webhook)
+│
+├── docs/                    # Upgrade guides and documentation
 ├── turbo.json               # Turborepo config (incl. Python tasks)
 ├── docker-compose.yml       # Local Supabase + Langfuse + Backend
 └── .github/workflows/       # CI: TS + Python + E2E + Docker
@@ -370,12 +417,13 @@ docker compose up -d
 - [x] Agent evaluation suite
 - [x] Docker Compose for local dev
 - [x] GitHub Actions CI
-- [ ] MCP (Model Context Protocol) server integration
-- [ ] Multi-agent orchestration patterns
-- [ ] Edge function deployment (Supabase Edge)
-- [ ] Expo SDK 55 + NativeWind v5 upgrade
-- [ ] Real-time collaborative AI (Supabase Realtime)
-- [ ] CLI scaffolding tool (`npx create-aiforge`)
+- [x] MCP (Model Context Protocol) server + client
+- [x] Multi-agent orchestration (Supervisor, Pipeline, Parallel, Debate)
+- [x] Supabase Edge Functions (ai-chat, embed, webhook)
+- [x] Real-time collaborative AI (Supabase Realtime)
+- [x] PWA support (installable web app + offline)
+- [x] CLI scaffolding tool (`npx create-aiforge`)
+- [x] Expo SDK 55 + NativeWind v5 upgrade guide
 
 ---
 

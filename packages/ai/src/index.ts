@@ -28,3 +28,26 @@ export {
 
 // ── LangGraph.js Abstractions ──────────────────────────────────────────
 export { createChatGraph, createRAGGraph, type GraphConfig } from './langgraph';
+
+// ── Real-Time Collaborative AI ────────────────────────────────────────
+export {
+  useRealtimeChat,
+  usePresence,
+  useRealtimeAI,
+  type RealtimeMessage,
+  type PresenceState,
+  type RealtimeChatConfig,
+} from './realtime';
+
+// ── Multi-Agent Orchestration ─────────────────────────────────────────
+export {
+  createSupervisorGraph,
+  createPipelineGraph,
+  createParallelGraph,
+  createDebateGraph,
+  type AgentWorker,
+  type SupervisorConfig,
+  type PipelineConfig,
+  type ParallelConfig,
+  type DebateConfig,
+} from './multi-agent';

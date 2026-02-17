@@ -12,7 +12,9 @@
     "./tools": "./src/tools.ts",
     "./use-ai": "./src/use-ai.ts",
     "./rag-helpers": "./src/rag-helpers.ts",
-    "./langgraph": "./src/langgraph.ts"
+    "./langgraph": "./src/langgraph.ts",
+    "./multi-agent": "./src/multi-agent.ts",
+    "./realtime": "./src/realtime.ts"
   },
   "scripts": {
     "lint": "biome check src/",

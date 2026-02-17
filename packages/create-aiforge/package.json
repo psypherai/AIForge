@@ -1,0 +1,44 @@
+{
+  "name": "create-aiforge",
+  "version": "1.0.0",
+  "description": "Create a new AIForge project — the #1 AI-native monorepo template",
+  "author": "Psypher AI <hello@psypher.ai>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psypherai/AIForge.git",
+    "directory": "packages/create-aiforge"
+  },
+  "bin": {
+    "create-aiforge": "./dist/index.js"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --dts --clean",
+    "dev": "tsx src/index.ts",
+    "lint": "biome check src/",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@clack/prompts": "^0.9.1",
+    "degit": "^2.8.4",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.0",
+    "tsup": "^8.5.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.9.3"
+  },
+  "keywords": [
+    "create",
+    "aiforge",
+    "monorepo",
+    "starter",
+    "nextjs",
+    "expo",
+    "fastapi",
+    "ai",
+    "psypher"
+  ]
+}
