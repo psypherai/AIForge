@@ -1,139 +1,162 @@
-# AIForge Starter Pack by Psypher AI
+<div align="center">
 
-> **The #1 AI-native monorepo template for 2026+**
-> Ship web, mobile, and AI products at maximum velocity with 90%+ code sharing.
+<img src="https://img.shields.io/badge/Psypher_AI-AIForge-7c3aed?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik0xMiAyQzYuNDggMiAyIDYuNDggMiAxMnM0LjQ4IDEwIDEwIDEwIDEwLTQuNDggMTAtMTBTMTcuNTIgMiAxMiAyem0wIDE4Yy00LjQxIDAtOC0zLjU5LTgtOHMzLjU5LTggOC04IDggMy41OSA4IDgtMy41OSA4LTggOHoiLz48L3N2Zz4=&logoColor=white" alt="AIForge" />
+
+# AIForge Starter Pack
+
+### The #1 AI-native monorepo template for 2026+
+
+Ship web, mobile, and AI products at maximum velocity with **90%+ code sharing**.
+
+[![GitHub stars](https://img.shields.io/github/stars/psypherai/AIForge?style=social)](https://github.com/psypherai/AIForge/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/psypherai/AIForge?style=social)](https://github.com/psypherai/AIForge/network/members)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/psypherai/AIForge/pulls)
+
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19.2-61dafb?logo=react)](https://react.dev)
+[![Expo](https://img.shields.io/badge/Expo_SDK-54-000020?logo=expo)](https://expo.dev)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi)](https://fastapi.tiangolo.com)
+[![Turborepo](https://img.shields.io/badge/Turborepo-2.8-EF4444?logo=turborepo)](https://turbo.build)
+[![Supabase](https://img.shields.io/badge/Supabase-pgvector-3ECF8E?logo=supabase)](https://supabase.com)
+[![pnpm](https://img.shields.io/badge/pnpm-10-F69220?logo=pnpm)](https://pnpm.io)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-everywhere-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
+
+[Getting Started](#-getting-started) · [AI Quick-Start](#-ai-quick-start-guide) · [Why AIForge](#-why-aiforge) · [Deploy](#-deployment) · [Contributing](CONTRIBUTING.md)
+
+---
+
+**Love this project? Give it a :star: to help others discover it!**
+
+</div>
+
+## What is AIForge?
+
+AIForge is the **canonical monorepo blueprint** for every AI product you build in 2026 and beyond. One `pnpm dev` command spins up a Next.js web app, an Expo mobile app, and a FastAPI + LangGraph backend — all sharing 90%+ of their code.
+
+```bash
+# Clone → Install → Run (under 2 minutes)
+git clone https://github.com/psypherai/AIForge.git && cd AIForge
+pnpm install && cp .env.example .env
+pnpm dev
+```
+
+> **Web** on `localhost:3000` · **Mobile** on `localhost:8081` · **API** on `localhost:8000` · **Docs** on `localhost:8000/docs`
 
 ---
 
 ## Why AIForge?
 
-AIForge is the **canonical monorepo blueprint** for every AI product you build in 2026 and beyond. It combines the best-of-the-best technologies into a single, cohesive, production-ready template with **88-94% code sharing** across web, mobile, and backend.
-
-### What Makes This Different
-
-| Feature | AIForge | Typical Template |
-|---------|---------|-----------------|
-| Code Sharing | **90%+** (screens, UI, AI, types, prompts) | 30-50% |
-| Styling DX | **Pure Tailwind everywhere** (NativeWind v5) | Mixed systems, learning curves |
-| AI Layer | **Full stack** (Vercel AI SDK + LangGraph + RAG) | Basic chat only |
-| Backend | **FastAPI + LangGraph + pgvector** in monorepo | Separate repo or none |
-| Observability | **Langfuse + LangSmith** out of the box | None |
-| Evals | **Built-in agent evaluation suite** | None |
-| Type Safety | **End-to-end** (Zod + OpenAPI + Pydantic) | Partial |
+<table>
+<tr>
+<th>Feature</th>
+<th>AIForge</th>
+<th>create-t3-app</th>
+<th>create-expo-app</th>
+<th>Typical Template</th>
+</tr>
+<tr>
+<td><strong>Code Sharing</strong></td>
+<td>90%+ (screens, UI, AI, types)</td>
+<td>Web only</td>
+<td>Mobile only</td>
+<td>30-50%</td>
+</tr>
+<tr>
+<td><strong>Platforms</strong></td>
+<td>Web + Mobile + Backend</td>
+<td>Web</td>
+<td>Mobile</td>
+<td>Usually 1</td>
+</tr>
+<tr>
+<td><strong>Styling DX</strong></td>
+<td>Pure Tailwind everywhere (NativeWind)</td>
+<td>Tailwind (web only)</td>
+<td>StyleSheet</td>
+<td>Mixed systems</td>
+</tr>
+<tr>
+<td><strong>AI Layer</strong></td>
+<td>Full stack (Vercel AI SDK + LangGraph + RAG)</td>
+<td>None</td>
+<td>None</td>
+<td>Basic chat only</td>
+</tr>
+<tr>
+<td><strong>Backend</strong></td>
+<td>FastAPI + LangGraph + pgvector in monorepo</td>
+<td>tRPC (TS only)</td>
+<td>None</td>
+<td>Separate repo</td>
+</tr>
+<tr>
+<td><strong>Observability</strong></td>
+<td>Langfuse + LangSmith out of the box</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Agent Evals</strong></td>
+<td>Built-in evaluation suite</td>
+<td>None</td>
+<td>None</td>
+<td>None</td>
+</tr>
+<tr>
+<td><strong>Type Safety</strong></td>
+<td>End-to-end (Zod + OpenAPI + Pydantic)</td>
+<td>tRPC</td>
+<td>Partial</td>
+<td>Partial</td>
+</tr>
+</table>
 
 ---
 
 ## Tech Stack (February 2026 — Best-of-the-Best)
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| **Monorepo** | Turborepo (Rust core + remote cache) | v2.8.x |
-| **Package Manager** | pnpm workspaces | v10 |
-| **Web** | Next.js App Router + React Compiler + Turbopack | 16.1.6 + React 19.2 |
-| **Mobile** | Expo SDK + React Native + Solito | 55 + 0.83 + v5 |
-| **Styling** | NativeWind (Tailwind CSS v4 everywhere) + shadcn/ui | v5 + v4 |
-| **AI (TypeScript)** | Vercel AI SDK + LangGraph.js + Zod schemas | v4 |
-| **AI (Python)** | FastAPI + LangGraph + LangChain | Latest |
-| **RAG** | Supabase pgvector + OpenAI embeddings | text-embedding-3-small |
-| **API Client** | @hey-api/openapi-ts + TanStack Query v5 | Auto-generated |
-| **Auth/DB/Vector** | Supabase (auth + Postgres + pgvector + realtime) | v2 |
-| **Observability** | Langfuse (open-source) + LangSmith | Latest |
-| **Tooling** | Biome + ESLint flat + Husky + Vitest + Playwright | Latest |
+| Layer | Technology | Why |
+|-------|-----------|-----|
+| **Monorepo** | Turborepo v2.8 (Rust core) | Remote cache, sub-second builds |
+| **Package Manager** | pnpm v10 workspaces | Fast, strict, disk-efficient |
+| **Web** | Next.js 16 + React 19.2 + Turbopack | RSC, streaming, React Compiler |
+| **Mobile** | Expo SDK 54 + React Native + Solito | Universal navigation, OTA updates |
+| **Styling** | NativeWind + Tailwind CSS + shadcn/ui | One styling system everywhere |
+| **AI (TypeScript)** | Vercel AI SDK + LangGraph.js + Zod | Streaming, tools, structured outputs |
+| **AI (Python)** | FastAPI + LangGraph + LangChain | Production agentic loops |
+| **RAG** | Supabase pgvector + OpenAI embeddings | Vector search in your database |
+| **API Client** | @hey-api/openapi-ts + TanStack Query v5 | Auto-generated, type-safe |
+| **Auth/DB** | Supabase (auth + Postgres + realtime) | All-in-one BaaS |
+| **Observability** | Langfuse + LangSmith | Trace every AI call, open-source |
+| **Tooling** | Biome + Vitest + Playwright | 100x faster linting, full testing |
 
 ---
 
-## Folder Structure
+## Architecture
 
 ```
 .
 ├── apps/
-│   ├── web/                    # Next.js 16.1.6 + Turbopack + shadcn/ui
-│   │   ├── app/                # App Router (layout, pages, API routes)
-│   │   │   ├── layout.tsx      # Root layout with providers
-│   │   │   ├── page.tsx        # Landing page
-│   │   │   ├── chat/page.tsx   # AI chat interface
-│   │   │   └── api/
-│   │   │       ├── chat/route.ts    # Vercel AI SDK streaming endpoint
-│   │   │       └── health/route.ts  # Health check
-│   │   ├── components/         # Web-specific components
-│   │   └── lib/                # Supabase clients (server + browser)
-│   │
-│   ├── mobile/                 # Expo SDK 55 + Solito v5 + NativeWind v5
-│   │   ├── app/                # Expo Router file-based routing
-│   │   │   ├── _layout.tsx     # Root layout
-│   │   │   ├── index.tsx       # Home screen
-│   │   │   └── chat.tsx        # Chat screen
-│   │   ├── metro.config.js     # Monorepo + NativeWind config
-│   │   └── app.json            # Expo configuration
-│   │
-│   └── backend/                # Python FastAPI + LangGraph
-│       ├── app/
-│       │   ├── main.py         # FastAPI app (/health, /docs, /redoc)
-│       │   ├── agents/
-│       │   │   ├── chat_agent.py   # LangGraph chat agent + tools
-│       │   │   └── rag_agent.py    # RAG agent with pgvector
-│       │   ├── routers/
-│       │   │   └── chat.py     # /api/v1/chat + /rag + /stream
-│       │   ├── models/
-│       │   │   └── chat.py     # Pydantic request/response models
-│       │   ├── services/
-│       │   │   └── vector_store.py  # Supabase pgvector operations
-│       │   └── core/
-│       │       ├── config.py   # Settings from environment
-│       │       ├── supabase.py # Supabase client
-│       │       └── observability.py # Langfuse + LangSmith
-│       ├── tests/
-│       ├── pyproject.toml      # uv project config
-│       └── Dockerfile
+│   ├── web/                 # Next.js 16 + Turbopack + shadcn/ui
+│   ├── mobile/              # Expo SDK 54 + Solito + NativeWind
+│   └── backend/             # Python FastAPI + LangGraph + uv
 │
 ├── packages/
-│   ├── ui/                     # shadcn/ui + Tailwind RN primitives
-│   │   ├── src/
-│   │   │   ├── components/     # Button, Card, Input, Badge, etc.
-│   │   │   ├── primitives/     # UniversalText/View/Pressable (.native.tsx)
-│   │   │   └── hooks/          # useMediaQuery, etc.
-│   │   └── stories/            # Storybook 8 stories
-│   │
-│   ├── core/                   # Types, utils, Zod schemas, constants
-│   │   └── src/
-│   │       ├── types/          # ChatMessage, User, API types
-│   │       ├── schemas/        # Zod validation schemas
-│   │       ├── constants/      # AI models, tokens, collections
-│   │       └── utils/          # Helpers, ID generation
-│   │
-│   ├── ai/                     # AI layer (THE CROWN JEWEL)
-│   │   └── src/
-│   │       ├── prompts.ts      # Prompt factory + templates
-│   │       ├── schemas.ts      # Structured output Zod schemas
-│   │       ├── tools.ts        # Tool definitions for AI SDK
-│   │       ├── use-ai.ts       # Universal React hooks (useAI, useRAG)
-│   │       ├── rag-helpers.ts  # Supabase pgvector RAG utilities
-│   │       └── langgraph.ts    # LangGraph.js graph builders
-│   │
-│   ├── api-client/             # Type-safe backend client
-│   │   └── src/
-│   │       ├── index.ts        # @hey-api/client-fetch wrapper
-│   │       └── hooks.ts        # TanStack Query hooks
-│   │
-│   ├── config/                 # Shared configurations
-│   │   └── src/
-│   │       ├── tailwind.css    # Tailwind v4 theme (shared web + native)
-│   │       └── tsconfig.*.json # TypeScript configs
-│   │
-│   ├── observability/          # Langfuse + LangSmith wrappers
-│   ├── db/                     # Supabase types + pgvector setup SQL
-│   ├── evals/                  # Agent evaluation suite
-│   └── eslint-config/          # ESLint flat config (fallback)
+│   ├── ui/                  # Shared UI (shadcn + Tailwind RN primitives)
+│   ├── core/                # Types, Zod schemas, utils, constants
+│   ├── ai/                  # Prompt factory, tools, RAG, hooks
+│   ├── api-client/          # Generated OpenAPI client + React Query hooks
+│   ├── config/              # Shared Tailwind, TypeScript configs
+│   ├── observability/       # Langfuse + LangSmith wrappers
+│   ├── db/                  # Supabase types + pgvector helpers
+│   ├── evals/               # Agent evaluation suite
+│   └── eslint-config/       # ESLint flat config (fallback)
 │
-├── turbo.json                  # Turborepo config (incl. Python tasks)
-├── pnpm-workspace.yaml         # Workspace definition
-├── package.json                # Root scripts + dev dependencies
-├── tsconfig.json               # Base TypeScript config
-├── biome.json                  # Primary linter + formatter
-├── .env.example                # Environment variable template
-├── docker-compose.yml          # Local Supabase + Langfuse + Backend
-├── .github/workflows/ci.yml   # CI: TS + Python + E2E + Docker
-└── README.md                   # This file
+├── turbo.json               # Turborepo config (incl. Python tasks)
+├── docker-compose.yml       # Local Supabase + Langfuse + Backend
+└── .github/workflows/       # CI: TS + Python + E2E + Docker
 ```
 
 ---
@@ -142,18 +165,20 @@ AIForge is the **canonical monorepo blueprint** for every AI product you build i
 
 ### Prerequisites
 
-- **Node.js** >= 22
-- **pnpm** >= 10 (`npm install -g pnpm`)
-- **Python** >= 3.12
-- **uv** (Python package manager: `curl -LsSf https://astral.sh/uv/install.sh | sh`)
-- **Docker** (for local Supabase + Langfuse)
+| Tool | Version | Install |
+|------|---------|---------|
+| Node.js | >= 22 | [nodejs.org](https://nodejs.org) |
+| pnpm | >= 10 | `npm install -g pnpm` |
+| Python | >= 3.12 | [python.org](https://python.org) |
+| uv | Latest | `curl -LsSf https://astral.sh/uv/install.sh \| sh` |
+| Docker | Latest | [docker.com](https://docker.com) |
 
-### One-Command Setup
+### Quick Start
 
 ```bash
 # 1. Clone and install
-git clone https://github.com/psypher-ai/aiforge.git
-cd aiforge
+git clone https://github.com/psypherai/AIForge.git
+cd AIForge
 pnpm install
 
 # 2. Set up Python backend
@@ -161,43 +186,47 @@ cd apps/backend && uv sync && cd ../..
 
 # 3. Configure environment
 cp .env.example .env
-# Edit .env with your API keys
+# Edit .env with your API keys (OPENAI_API_KEY, SUPABASE_URL, etc.)
 
-# 4. Start local services (Supabase + Langfuse)
+# 4. Start local services (optional — for Supabase + Langfuse)
 docker compose up -d
 
 # 5. Run everything concurrently
 pnpm dev
 ```
 
-This starts:
-- **Web** at `http://localhost:3000` (Next.js + Turbopack)
-- **Mobile** via Expo DevTools
-- **Backend** at `http://localhost:8000` (FastAPI + auto-reload)
-- **API Docs** at `http://localhost:8000/docs` (Swagger UI)
-- **Supabase Studio** at `http://localhost:54323`
-- **Langfuse** at `http://localhost:3100`
+That's it. Three apps running simultaneously:
 
-### Individual Commands
+| Service | URL | Stack |
+|---------|-----|-------|
+| **Web** | [localhost:3000](http://localhost:3000) | Next.js + Turbopack |
+| **Mobile Web** | [localhost:8081](http://localhost:8081) | Expo + NativeWind |
+| **Backend API** | [localhost:8000](http://localhost:8000) | FastAPI + Uvicorn |
+| **API Docs** | [localhost:8000/docs](http://localhost:8000/docs) | Swagger UI |
+| **Supabase Studio** | [localhost:54323](http://localhost:54323) | Postgres + pgvector |
+| **Langfuse** | [localhost:3100](http://localhost:3100) | AI Observability |
+
+### Commands
 
 ```bash
-pnpm dev:web        # Next.js only
-pnpm dev:mobile     # Expo only
-pnpm dev:backend    # FastAPI only
-pnpm build          # Build all
-pnpm test           # Run all tests
-pnpm typecheck      # TypeScript check
-pnpm check          # Biome lint + format
-pnpm api:generate   # Regenerate API client from OpenAPI
+pnpm dev              # Start all (web + mobile + backend)
+pnpm dev:web          # Next.js only
+pnpm dev:mobile       # Expo only
+pnpm dev:backend      # FastAPI only
+pnpm build            # Build all packages
+pnpm test             # Run all tests (Vitest)
+pnpm typecheck        # TypeScript check
+pnpm check            # Biome lint + format
+pnpm api:generate     # Regenerate API client from OpenAPI spec
 ```
 
 ---
 
 ## AI Quick-Start Guide
 
-### 1. Chat with Streaming (Web)
+### 1. Streaming Chat (Web)
 
-The web app includes a ready-to-use chat interface at `/chat` powered by Vercel AI SDK v4:
+The `/chat` page is pre-built with Vercel AI SDK:
 
 ```typescript
 // apps/web/app/api/chat/route.ts — already set up!
@@ -216,7 +245,7 @@ export async function POST(req: Request) {
 }
 ```
 
-### 2. Use the AI Hook (Web + Mobile)
+### 2. Universal AI Hook (Web + Mobile)
 
 ```tsx
 import { useAI } from '@aiforge/ai/use-ai';
@@ -228,7 +257,7 @@ function ChatScreen() {
   });
 
   return (
-    <View>
+    <View className="flex-1 p-4">
       {messages.map(m => <Text key={m.id}>{m.content}</Text>)}
       <Button onPress={() => send('Hello!')} disabled={isLoading}>Send</Button>
     </View>
@@ -236,7 +265,7 @@ function ChatScreen() {
 }
 ```
 
-### 3. Structured Outputs with Zod
+### 3. Structured Outputs
 
 ```typescript
 import { openai } from '@ai-sdk/openai';
@@ -254,9 +283,8 @@ const { object } = await generateObject({
 ### 4. Tool Calling
 
 ```typescript
-import { openai } from '@ai-sdk/openai';
-import { generateText } from 'ai';
 import { createToolSet } from '@aiforge/ai/tools';
+import { generateText } from 'ai';
 
 const { text } = await generateText({
   model: openai('gpt-4o'),
@@ -266,67 +294,40 @@ const { text } = await generateText({
 });
 ```
 
-### 5. RAG with Supabase pgvector
+### 5. RAG with pgvector
 
 ```typescript
 import { searchSimilar, upsertDocuments } from '@aiforge/ai/rag-helpers';
-import { createSupabaseAdmin } from '@aiforge/db';
-
-const supabase = createSupabaseAdmin();
 
 // Index documents
 await upsertDocuments(supabase, [
   { content: 'AIForge is the best monorepo.', metadata: { source: 'docs' } },
 ]);
 
-// Search
+// Semantic search
 const results = await searchSimilar(supabase, 'best monorepo', { topK: 5 });
 ```
 
-### 6. LangGraph Agent (Python Backend)
+### 6. LangGraph Agent (Python)
 
-The FastAPI backend includes a production-grade LangGraph agent at `POST /api/v1/chat`:
-
-```python
-# Already built! Uses:
-# - LangGraph StateGraph with tool calling
-# - Langfuse + LangSmith observability
-# - Supabase pgvector for RAG
-# - Pydantic v2 request/response models
-
+```bash
 curl -X POST http://localhost:8000/api/v1/chat \
   -H "Content-Type: application/json" \
   -d '{"messages": [{"role": "user", "content": "Hello!"}]}'
 ```
 
-### 7. Run Agent Evaluations
+### 7. Agent Evaluations
 
 ```typescript
 import { runEval, scorers, EXAMPLE_DATASET } from '@aiforge/evals';
 
 const results = await runEval({
   dataset: EXAMPLE_DATASET,
-  agent: async (input) => {
-    const res = await fetch('/api/chat', {
-      method: 'POST',
-      body: JSON.stringify({ messages: [{ role: 'user', content: input }] }),
-    });
-    return (await res.json()).content;
-  },
+  agent: myAgent,
   scorers: [scorers.relevance, scorers.coherence, scorers.safety],
 });
-
 console.log(`Average score: ${results.summary.averageScore}`);
 ```
-
----
-
-## Database Setup (Supabase pgvector)
-
-1. Start local Supabase: `docker compose up -d`
-2. Open Supabase Studio: `http://localhost:54323`
-3. Run the setup SQL from `packages/db/src/pgvector.ts` in the SQL editor
-4. Generate TypeScript types: `pnpm --filter @aiforge/db db:generate`
 
 ---
 
@@ -335,93 +336,89 @@ console.log(`Average score: ${results.summary.averageScore}`);
 ### Web (Vercel)
 
 ```bash
-# Connect your repo to Vercel, set root directory to apps/web
-# Or use the CLI:
 vercel --cwd apps/web
 ```
-
-Environment variables needed:
-- `NEXT_PUBLIC_SUPABASE_URL`
-- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-- `OPENAI_API_KEY`
-- `BACKEND_URL`
 
 ### Mobile (Expo EAS)
 
 ```bash
-cd apps/mobile
-eas build --platform all
-eas submit --platform all
+cd apps/mobile && eas build --platform all && eas submit --platform all
 ```
 
 ### Backend (Fly.io / Render / Railway)
 
 ```bash
-# Fly.io
-cd apps/backend
-fly launch
-fly deploy
-
-# Or use the Dockerfile directly:
-docker build -t aiforge-backend .
-docker run -p 8000:8000 --env-file .env aiforge-backend
+cd apps/backend && fly launch && fly deploy
 ```
 
-### Backend (Docker Compose - Production)
+### Full Stack (Docker Compose)
 
 ```bash
-docker compose -f docker-compose.yml up -d backend
+docker compose up -d
 ```
 
 ---
 
-## Pros & Cons
+## Roadmap
 
-### Pros
-
-- **90%+ code sharing** — screens, UI, AI logic, types, prompts shared across web + mobile
-- **Pure Tailwind DX** — NativeWind v5 means one styling system everywhere, zero extra learning
-- **Full-stack AI** — Vercel AI SDK (frontend) + LangGraph (backend) + RAG (pgvector) = complete
-- **Type-safe end-to-end** — Zod (TS) ↔ Pydantic (Python) ↔ OpenAPI ↔ Generated client
-- **Production observability** — Langfuse + LangSmith for tracing every AI call
-- **Agent evals built-in** — Test your AI before shipping with automated evaluation suite
-- **One command to develop** — `pnpm dev` starts web + mobile + backend concurrently
-- **Turborepo remote cache** — CI runs in seconds, not minutes
-- **Future-proof** — MCP support, React Compiler, Turbopack, agentic-first architecture
-
-### Cons
-
-- **Large initial footprint** — More packages than a simple project needs (prune what you don't use)
-- **Supabase lock-in** — Auth/DB/Vector all on Supabase (Clerk auth is supported as alternative)
-- **Python + TypeScript** — Two runtimes to manage (uv makes Python painless though)
-- **Requires API keys** — AI features need OpenAI/Anthropic keys to function
-- **Learning curve for LangGraph** — Powerful but takes time to master the graph paradigm
+- [x] Monorepo with Turborepo + pnpm
+- [x] Next.js 16 web app with shadcn/ui
+- [x] Expo mobile app with NativeWind
+- [x] FastAPI + LangGraph backend
+- [x] Supabase pgvector RAG
+- [x] Langfuse observability
+- [x] Agent evaluation suite
+- [x] Docker Compose for local dev
+- [x] GitHub Actions CI
+- [ ] MCP (Model Context Protocol) server integration
+- [ ] Multi-agent orchestration patterns
+- [ ] Edge function deployment (Supabase Edge)
+- [ ] Expo SDK 55 + NativeWind v5 upgrade
+- [ ] Real-time collaborative AI (Supabase Realtime)
+- [ ] CLI scaffolding tool (`npx create-aiforge`)
 
 ---
 
-## Why This Is the #1 AI Monorepo in February 2026
+## Contributing
 
-1. **React 19.2 + React Compiler** — Automatic memoization, zero manual optimization
-2. **Next.js 16.1.6 + Turbopack** — Sub-second HMR, RSC streaming, MCP support
-3. **Expo SDK 55 + NativeWind v5** — True Tailwind CSS v4 on native, no compromises
-4. **Vercel AI SDK v4** — The gold standard for AI in React (streaming, tools, structured outputs)
-5. **LangGraph** — Production-grade agentic loops in both TypeScript and Python
-6. **Supabase pgvector** — RAG without leaving your database
-7. **Turborepo v2.8** — Rust-powered build system with remote cache and agentic features
-8. **Biome** — 100x faster than ESLint + Prettier combined
-9. **Agent Evals** — Test-driven AI development built into the monorepo
-10. **Langfuse** — Open-source observability you own, not rent
+We love contributions! Check out our [Contributing Guide](CONTRIBUTING.md) for details on how to get started.
+
+Whether it's a bug fix, new feature, documentation improvement, or even a typo fix — every contribution is valued.
+
+---
+
+## Community
+
+- [GitHub Discussions](https://github.com/psypherai/AIForge/discussions) — Ask questions, share ideas
+- [GitHub Issues](https://github.com/psypherai/AIForge/issues) — Report bugs, request features
+- Star the repo to stay updated with releases
+
+---
+
+## Star History
+
+<a href="https://star-history.com/#psypherai/AIForge&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=psypherai/AIForge&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=psypherai/AIForge&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=psypherai/AIForge&type=Date" />
+  </picture>
+</a>
 
 ---
 
 ## License
 
-MIT - Psypher AI 2026
+MIT — Psypher AI 2026
 
 ---
 
 <div align="center">
-  <strong>Built with purpose by Psypher AI</strong>
-  <br />
-  <em>The future of AI development starts here.</em>
+
+**Built with purpose by [Psypher AI](https://github.com/psypherai)**
+
+If AIForge helped you ship faster, consider giving it a :star:
+
+[Report Bug](https://github.com/psypherai/AIForge/issues/new?template=bug_report.md) · [Request Feature](https://github.com/psypherai/AIForge/issues/new?template=feature_request.md)
+
 </div>
