@@ -35,8 +35,8 @@ Ship web, mobile, and AI products at maximum velocity with **90%+ code sharing**
 AIForge is the **canonical monorepo blueprint** for every AI product you build in 2026 and beyond. One `pnpm dev` command spins up a Next.js web app, an Expo mobile app, and a FastAPI + LangGraph backend — all sharing 90%+ of their code.
 
 ```bash
-# Clone → Install → Run (under 2 minutes)
-git clone https://github.com/psypherai/AIForge.git && cd AIForge
+# Scaffold → Install → Run (under 2 minutes)
+npx degit psypherai/AIForge my-app && cd my-app
 pnpm install && cp .env.example .env
 pnpm dev
 ```
@@ -223,9 +223,9 @@ pnpm dev
 ### Quick Start
 
 ```bash
-# 1. Clone and install
-git clone https://github.com/psypherai/AIForge.git
-cd AIForge
+# 1. Scaffold and install
+npx degit psypherai/AIForge my-app
+cd my-app
 pnpm install
 
 # 2. Set up Python backend
@@ -422,7 +422,7 @@ docker compose up -d
 - [x] Supabase Edge Functions (ai-chat, embed, webhook)
 - [x] Real-time collaborative AI (Supabase Realtime)
 - [x] PWA support (installable web app + offline)
-- [x] CLI scaffolding tool (`npx create-aiforge`)
+- [x] Quick scaffold via `npx degit psypherai/AIForge`
 - [x] Expo SDK 55 + NativeWind v5 upgrade guide
 - [x] Scalar API Reference (replaced Swagger UI)
 
@@ -439,6 +439,7 @@ docker compose up -d
 **Medium Priority — Production Essentials**
 
 - [ ] AI Background Agents — long-running async tasks with notifications
+- [ ] CLI scaffolding tool (`npx create-aiforge`) — interactive project setup
 - [ ] Multi-provider LLM Router — auto-route between OpenAI / Anthropic / Gemini / local models
 - [ ] Fine-tuning Pipeline — scripts to fine-tune on your app's data
 - [ ] Prompt Playground — built-in UI to test and iterate prompts

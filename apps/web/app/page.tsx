@@ -198,7 +198,7 @@ export default function HomePage() {
           </p>
           <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <code className="rounded-xl border border-border bg-card px-6 py-3 font-mono text-sm">
-              npx create-aiforge my-app
+              npx degit psypherai/AIForge my-app
             </code>
           </div>
         </div>
