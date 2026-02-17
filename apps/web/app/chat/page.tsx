@@ -4,7 +4,7 @@ import { useChat } from '@ai-sdk/react';
 import Link from 'next/link';
 
 export default function ChatPage() {
-  const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+  const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
     api: '/api/chat',
   });
 
@@ -109,6 +109,17 @@ export default function ChatPage() {
             </div>
           </div>
         )}
+
+        {error && (
+          <div className="mx-auto w-full max-w-md rounded-xl border border-red-500/30 bg-red-500/10 px-5 py-4 text-center">
+            <p className="text-sm font-medium text-red-400">Connection Error</p>
+            <p className="mt-1 text-xs text-red-400/70">
+              {error.message.includes('API key') || error.message.includes('503')
+                ? 'OPENAI_API_KEY not set. Add it to your .env file to enable chat.'
+                : error.message || 'Failed to reach the AI backend. Is the server running?'}
+            </p>
+          </div>
+        )}
       </div>
 
       {/* Input */}
@@ -125,7 +136,7 @@ export default function ChatPage() {
           />
           <button
             type="submit"
-            disabled={isLoading || !input.trim()}
+            disabled={isLoading || !input?.trim()}
             className="rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:shadow-xl hover:shadow-primary/30 disabled:opacity-50 disabled:shadow-none"
           >
             <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">

@@ -1,24 +1,25 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import { Providers } from './providers';
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' });
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  themeColor: '#7c3aed',
+};
+
 export const metadata: Metadata = {
   title: 'AIForge — by Psypher AI',
   description: 'The #1 AI-native application platform for 2026+',
   manifest: '/manifest.json',
-  themeColor: '#7c3aed',
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
     title: 'AIForge',
-  },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 1,
   },
 };
 
