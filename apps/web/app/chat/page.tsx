@@ -2,6 +2,7 @@
 
 import { useChat } from '@ai-sdk/react';
 import Link from 'next/link';
+import { ThemeToggle } from '../../components/theme-toggle';
 
 export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
@@ -21,9 +22,12 @@ export default function ChatPage() {
             <p className="text-xs text-muted-foreground">LangGraph + Vercel AI SDK</p>
           </div>
         </div>
-        <div className="flex items-center gap-2">
-          <div className={`h-2 w-2 rounded-full ${isLoading ? 'animate-pulse bg-yellow-400' : 'bg-green-400'}`} />
-          <span className="text-xs text-muted-foreground">{isLoading ? 'Thinking...' : 'Ready'}</span>
+        <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
+            <div className={`h-2 w-2 rounded-full ${isLoading ? 'animate-pulse bg-yellow-400' : 'bg-green-400'}`} />
+            <span className="text-xs text-muted-foreground">{isLoading ? 'Thinking...' : 'Ready'}</span>
+          </div>
+          <ThemeToggle />
         </div>
       </header>
 

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ThemeToggle } from '../components/theme-toggle';
 
 const FEATURES = [
   {
@@ -71,6 +72,7 @@ export default function HomePage() {
           <a href="https://psypher.ai" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-foreground">
             Psypher AI
           </a>
+          <ThemeToggle />
           <a
             href="https://github.com/psypherai/AIForge"
             target="_blank"
