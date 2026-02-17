@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} dark`} suppressHydrationWarning>
       <head>
         <link rel="icon" href="/icons/icon-192.png" />
         <link rel="apple-touch-icon" href="/icons/icon-192.png" />

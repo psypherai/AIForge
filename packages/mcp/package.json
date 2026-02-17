@@ -12,7 +12,7 @@
     "./client": "./src/client.ts"
   },
   "scripts": {
-    "dev": "tsx src/server.ts",
+    "start": "tsx src/server.ts",
     "lint": "biome check src/",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",

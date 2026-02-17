@@ -19,11 +19,12 @@ export default function RootLayout() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <StatusBar style="auto" />
+      <StatusBar style="light" />
       <Stack
         screenOptions={{
           headerShown: false,
-          contentStyle: { backgroundColor: '#0a0a0a' },
+          contentStyle: { backgroundColor: '#09090b' },
+          animation: 'slide_from_right',
         }}
       />
     </QueryClientProvider>

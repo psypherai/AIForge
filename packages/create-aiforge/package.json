@@ -15,7 +15,6 @@
   "files": ["dist"],
   "scripts": {
     "build": "tsup src/index.ts --format esm --dts --clean",
-    "dev": "tsx src/index.ts",
     "lint": "biome check src/",
     "typecheck": "tsc --noEmit"
   },
