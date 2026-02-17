@@ -5,7 +5,7 @@
   "description": "The #1 AI-native monorepo template for 2026+. Next.js + Expo + FastAPI + LangGraph + Supabase with 90%+ code sharing.",
   "author": "Psypher AI <hello@psypher.ai>",
   "license": "MIT",
-  "homepage": "https://github.com/psypherai/AIForge#readme",
+  "homepage": "https://psypher.ai",
   "repository": {
     "type": "git",
     "url": "https://github.com/psypherai/AIForge.git"

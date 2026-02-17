@@ -22,7 +22,7 @@ Ship web, mobile, and AI products at maximum velocity with **90%+ code sharing**
 [![pnpm](https://img.shields.io/badge/pnpm-10-F69220?logo=pnpm)](https://pnpm.io)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-everywhere-06B6D4?logo=tailwindcss)](https://tailwindcss.com)
 
-[Getting Started](#-getting-started) · [AI Quick-Start](#-ai-quick-start-guide) · [Why AIForge](#-why-aiforge) · [Deploy](#-deployment) · [Contributing](CONTRIBUTING.md)
+[Getting Started](#-getting-started) · [AI Quick-Start](#-ai-quick-start-guide) · [Why AIForge](#-why-aiforge) · [Deploy](#-deployment) · [Contributing](CONTRIBUTING.md) · [Psypher AI](https://psypher.ai)
 
 ---
 
@@ -409,13 +409,13 @@ Whether it's a bug fix, new feature, documentation improvement, or even a typo f
 
 ## License
 
-MIT — Psypher AI 2026
+MIT — [Psypher AI](https://psypher.ai) 2026
 
 ---
 
 <div align="center">
 
-**Built with purpose by [Psypher AI](https://github.com/psypherai)**
+**Built with purpose by [Psypher AI](https://psypher.ai)**
 
 If AIForge helped you ship faster, consider giving it a :star:
 
