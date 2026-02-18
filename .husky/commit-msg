@@ -1,0 +1,5 @@
+#!/bin/sh
+# Strip Co-authored-by Cursor lines from every commit message
+sed -i '' '/Co-authored-by: Cursor.*/d' "$1"
+# Remove trailing blank lines
+sed -i '' -e :a -e '/^\n*$/{$d;N;ba' -e '}' "$1"
