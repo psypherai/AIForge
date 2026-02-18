@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ThemeToggle } from '../components/theme-toggle';
+import { Logo } from '../components/logo';
 
 const FEATURES = [
   {
@@ -60,9 +61,7 @@ export default function HomePage() {
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between border-b border-border/50 px-6 py-4 backdrop-blur-sm">
         <div className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground">
-            AI
-          </div>
+          <Logo size={32} />
           <span className="text-sm font-semibold tracking-tight">AIForge</span>
         </div>
         <div className="flex items-center gap-6">

@@ -3,6 +3,7 @@
 import { useChat } from '@ai-sdk/react';
 import Link from 'next/link';
 import { ThemeToggle } from '../../components/theme-toggle';
+import { Logo } from '../../components/logo';
 
 export default function ChatPage() {
   const { messages, input, handleInputChange, handleSubmit, isLoading, error } = useChat({
@@ -14,8 +15,8 @@ export default function ChatPage() {
       {/* Header */}
       <header className="sticky top-0 z-10 flex items-center justify-between border-b border-border/50 bg-background/80 px-6 py-4 backdrop-blur-md">
         <div className="flex items-center gap-3">
-          <Link href="/" className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-sm font-bold text-primary-foreground transition-transform hover:scale-105">
-            AI
+          <Link href="/" className="transition-transform hover:scale-105">
+            <Logo size={32} />
           </Link>
           <div>
             <h1 className="text-sm font-semibold">AIForge Chat</h1>
