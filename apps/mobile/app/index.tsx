@@ -2,6 +2,7 @@ import { View, Text, Pressable, ScrollView } from 'react-native';
 import { Link } from 'solito/link';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ThemeToggle } from '../components/theme-toggle';
+import { Logo } from '../components/logo';
 
 const FEATURES = [
   { icon: '⚡', title: 'Web + Mobile', desc: 'Next.js 16 + Expo SDK 54 with 90%+ shared code' },
@@ -25,9 +26,7 @@ export default function HomeScreen() {
         {/* Nav */}
         <View className="flex-row items-center justify-between border-b border-border/50 px-5 py-4">
           <View className="flex-row items-center gap-3">
-            <View className="h-8 w-8 items-center justify-center rounded-lg bg-primary">
-              <Text className="text-sm font-bold text-primary-foreground">AI</Text>
-            </View>
+            <Logo size={32} />
             <Text className="text-sm font-semibold text-foreground">AIForge</Text>
           </View>
           <View className="flex-row items-center gap-3">

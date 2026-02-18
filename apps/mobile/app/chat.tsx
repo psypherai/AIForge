@@ -3,6 +3,7 @@ import { useState, useCallback, useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { Link } from 'solito/link';
 import { ThemeToggle } from '../components/theme-toggle';
+import { Logo } from '../components/logo';
 
 interface Message {
   id: string;
@@ -69,8 +70,8 @@ export default function ChatScreen() {
         <View className="flex-row items-center justify-between border-b border-border/50 px-5 py-4">
           <View className="flex-row items-center gap-3">
             <Link href="/">
-              <Pressable className="h-8 w-8 items-center justify-center rounded-lg bg-primary active:opacity-80">
-                <Text className="text-sm font-bold text-primary-foreground">AI</Text>
+              <Pressable className="active:opacity-80">
+                <Logo size={32} />
               </Pressable>
             </Link>
             <View>
