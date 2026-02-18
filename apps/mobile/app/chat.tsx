@@ -1,7 +1,7 @@
 import { View, Text, TextInput, Pressable, FlatList, KeyboardAvoidingView, Platform } from 'react-native';
 import { useState, useCallback, useRef } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Link } from 'solito/link';
+import { useRouter } from 'expo-router';
 import { ThemeToggle } from '../components/theme-toggle';
 import { Logo } from '../components/logo';
 
@@ -19,6 +19,7 @@ const SUGGESTIONS = [
 ];
 
 export default function ChatScreen() {
+  const router = useRouter();
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
@@ -69,11 +70,9 @@ export default function ChatScreen() {
         {/* Header */}
         <View className="flex-row items-center justify-between border-b border-border/50 px-5 py-4">
           <View className="flex-row items-center gap-3">
-            <Link href="/">
-              <Pressable className="active:opacity-80">
-                <Logo size={32} />
-              </Pressable>
-            </Link>
+            <Pressable onPress={() => router.back()} className="active:opacity-80">
+              <Logo size={32} />
+            </Pressable>
             <View>
               <Text className="text-sm font-semibold text-foreground">AIForge Chat</Text>
               <Text className="text-xs text-muted-foreground">LangGraph + Vercel AI SDK</Text>

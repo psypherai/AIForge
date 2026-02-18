@@ -1,5 +1,5 @@
 import { View, Text, Pressable } from 'react-native';
-import { Link } from 'solito/link';
+import { useRouter } from 'expo-router';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ThemeToggle } from '../components/theme-toggle';
 import { Logo } from '../components/logo';
@@ -14,6 +14,8 @@ const HIGHLIGHTS = [
 ];
 
 export default function HomeScreen() {
+  const router = useRouter();
+
   return (
     <SafeAreaView className="flex-1 bg-background">
       {/* Nav */}
@@ -52,12 +54,13 @@ export default function HomeScreen() {
 
         {/* CTA */}
         <View className="mt-8 flex-row gap-3">
-          <Link href="/chat">
-            <Pressable className="flex-row items-center gap-2 rounded-xl bg-primary px-7 py-4 shadow-lg active:opacity-80">
-              <Text className="text-sm font-semibold text-primary-foreground">Try AI Chat</Text>
-              <Text className="text-sm text-primary-foreground">→</Text>
-            </Pressable>
-          </Link>
+          <Pressable
+            onPress={() => router.push('/chat')}
+            className="flex-row items-center gap-2 rounded-xl bg-primary px-7 py-4 shadow-lg active:opacity-80"
+          >
+            <Text className="text-sm font-semibold text-primary-foreground">Try AI Chat</Text>
+            <Text className="text-sm text-primary-foreground">→</Text>
+          </Pressable>
         </View>
 
         {/* Stats row */}
