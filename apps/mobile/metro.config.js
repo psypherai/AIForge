@@ -16,6 +16,16 @@ config.resolver.nodeModulesPaths = [
   path.resolve(monorepoRoot, 'node_modules'),
 ];
 
+// Force a single copy of React across the entire bundle.
+// Without this, workspace packages (e.g. @aiforge/ai) that depend on
+// react@^19.2 get their own copy, breaking hooks.
+config.resolver.extraNodeModules = {
+  react: path.resolve(projectRoot, 'node_modules/react'),
+  'react-dom': path.resolve(projectRoot, 'node_modules/react-dom'),
+  'react-native': path.resolve(projectRoot, 'node_modules/react-native'),
+  'react-native-web': path.resolve(projectRoot, 'node_modules/react-native-web'),
+};
+
 module.exports = withNativeWind(config, {
   input: './global.css',
   inlineRem: 16,
