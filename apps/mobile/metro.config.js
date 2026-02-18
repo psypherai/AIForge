@@ -17,13 +17,31 @@ config.resolver.nodeModulesPaths = [
 ];
 
 // Force a single copy of React across the entire bundle.
-// Without this, workspace packages (e.g. @aiforge/ai) that depend on
-// react@^19.2 get their own copy, breaking hooks.
-config.resolver.extraNodeModules = {
+// pnpm's strict isolation gives transitive deps (like react-native-css-interop)
+// their own nested node_modules/react, which breaks hooks.
+// This resolver intercept ensures ALL react/react-dom imports resolve to
+// the mobile app's copy, regardless of where the import originates.
+const singletonModules = {
   react: path.resolve(projectRoot, 'node_modules/react'),
   'react-dom': path.resolve(projectRoot, 'node_modules/react-dom'),
   'react-native': path.resolve(projectRoot, 'node_modules/react-native'),
   'react-native-web': path.resolve(projectRoot, 'node_modules/react-native-web'),
+};
+
+config.resolver.extraNodeModules = singletonModules;
+
+const originalResolveRequest = config.resolver.resolveRequest;
+config.resolver.resolveRequest = (context, moduleName, platform) => {
+  if (singletonModules[moduleName]) {
+    return {
+      filePath: require.resolve(moduleName, { paths: [projectRoot] }),
+      type: 'sourceFile',
+    };
+  }
+  if (originalResolveRequest) {
+    return originalResolveRequest(context, moduleName, platform);
+  }
+  return context.resolveRequest(context, moduleName, platform);
 };
 
 module.exports = withNativeWind(config, {
