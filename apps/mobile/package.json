@@ -4,7 +4,7 @@
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
-    "dev": "expo start --clear",
+    "dev": "expo start --go --clear",
     "build:ios": "eas build --platform ios",
     "build:android": "eas build --platform android",
     "lint": "biome check .",
